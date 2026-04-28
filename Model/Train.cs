@@ -45,7 +45,7 @@ namespace trainStation.Model
 
         [Display(Name = "Mass (Kilograms)")]
         [Range(0, double.MaxValue, ErrorMessage = "Mass must be a positive number.")]
-        public double Mass { get; set; } //In Kilograms
+        public double? Mass { get; set; } //In Kilograms
 
         [Display(Name = "Requires Special Handling")]
         public bool SpecialHandling { get; set; }

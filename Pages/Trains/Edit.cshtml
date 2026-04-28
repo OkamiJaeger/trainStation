@@ -1,0 +1,72 @@
+﻿@page
+@model trainStation.Pages.Trains.EditModel
+
+@{
+    ViewData["Title"] = "Edit Train";
+}
+<div class="bg-opacity-50 bg-light p-3">
+<h1>Edit Train</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Train.Id" />
+            <div class="form-group">
+<span class="text-danger">*</span>
+                <label asp-for="Train.Name" class="control-label"></label>
+                <input asp-for="Train.Name" class="form-control" aria-required="true"/>
+                <span asp-validation-for="Train.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+<span class="text-danger">*</span>
+                <label asp-for="Train.Company" class="control-label"></label>
+                <input asp-for="Train.Company" class="form-control" aria-required="true"/>
+                <span asp-validation-for="Train.Company" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <span class="text-danger">*</span>  <label asp-for="Train.Service" class="control-label"></label>
+                <select asp-for="Train.Service" class="form-control" asp-items="Html.GetEnumSelectList<trainStation.Model.ServiceType>()" required aria-required="true">
+                    <option value="">--- Select a Service Type ---</option>
+                </select>
+                <span asp-validation-for="Train.Service" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Train.Cargo" class="control-label"></label>
+                <select asp-for="Train.Cargo" class="form-control" asp-items="Html.GetEnumSelectList<trainStation.Model.CargoType>()">
+                    <option value="">-- Select a Cargo Type --</option>
+                </select>
+                <span asp-validation-for="Train.Cargo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+<span class="text-danger">*</span>
+                <label asp-for="Train.Length" class="control-label"></label>
+                <input asp-for="Train.Length" class="form-control" aria-required="true"/>
+                <span asp-validation-for="Train.Length" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Train.Mass" class="control-label"></label>
+                <input asp-for="Train.Mass" class="form-control" />
+                <span asp-validation-for="Train.Mass" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Train.SpecialHandling" /> @Html.DisplayNameFor(model => model.Train.SpecialHandling)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-outline-dark" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

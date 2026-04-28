@@ -1,0 +1,64 @@
+﻿@page
+@model trainStation.Pages.Trains.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete Train";
+}
+<div class="bg-opacity-50 bg-light p-3">
+<h1>Delete Train</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Train.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Train.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Train.Company)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Train.Company)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Train.Service)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Train.Service)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Train.Cargo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Train.Cargo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Train.Length)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Train.Length)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Train.Mass)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Train.Mass)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Train.SpecialHandling)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Train.SpecialHandling)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Train.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
+</div>

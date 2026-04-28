@@ -19,6 +19,9 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-image:url('../images/Train station.jpg');
+  background-size:cover;
+  background-repeat:no-repeat;
 }
 
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
@@ -28,4 +31,24 @@ body {
 
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
+}
+
+a:link, a:active, a:visited, a:hover {
+    color:,darkblue;
+    padding:10px;
+    text-decoration:none;
+    font-size:1.1em;
+    font-weight:750;
+}
+h1{
+    -webkit-text-stroke-color:white;
+    -webkit-text-fill-color:crimson;
+    text-shadow:2px 2px black;
+    font-weight:750;
+}
+th{
+    font-size:1.2em;
+}
+.form-group{
+    font-size:1.2em;
 }

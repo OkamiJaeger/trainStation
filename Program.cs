@@ -1,3 +1,6 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using trainStation.Data;
 namespace trainStation
 {
     public class Program
@@ -5,6 +8,8 @@ namespace trainStation
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            builder.Services.AddDbContext<trainStationContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("trainStationContext") ?? throw new InvalidOperationException("Connection string 'trainStationContext' not found.")));
 
             // Add services to the container.
             builder.Services.AddRazorPages();
